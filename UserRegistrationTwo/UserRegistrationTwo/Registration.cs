@@ -65,5 +65,27 @@ namespace UserRegistrationTwo
                 }
             }
         }
+        public void MobileRegistration()
+        {
+            string pattern_mobile = @"^[9][1][ ][6-9][0-9]{9}$"; //91 9340596362
+            string input_mobile = "";
+
+            Regex obj = new Regex(pattern_mobile);
+
+            while (true)
+            {
+                Console.Write("Enter your mobile number: ");
+                input_mobile = Console.ReadLine();
+
+                if (obj.IsMatch(input_mobile))
+                {
+                    Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                }
+            }
+        }
     }
 }
