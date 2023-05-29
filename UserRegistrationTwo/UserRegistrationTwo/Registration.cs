@@ -91,19 +91,20 @@ namespace UserRegistrationTwo
         {
             //string pattern_password_rule1 = @"^[A-Za-z0-9.-_]{8,}$";
             //string pattern_password_rule2 = @"^[A-Z][A-Za-z0-9.-_]{7,}$";
-            string pattern_password_rule3 = @"^[A-Z][0-9][A-Za-z0-9.-_]{6,}$";
-            string input_password_rule3 = "";
+            //string pattern_password_rule3 = @"^[A-Z][0-9][A-Za-z0-9.-_]{6,}$";
+            string pattern_password_rule4 = @"^[A-Z][0-9][A-Za-z0-9.-_]{5,}[@.-_]$";
+            string input_password_rule4 = "";
 
-            Regex obj = new Regex(pattern_password_rule3);
+            Regex obj = new Regex(pattern_password_rule4);
 
             while (true)
             {
                 Console.Write("Enter the password: ");
-                input_password_rule3 = Console.ReadLine();
+                input_password_rule4 = Console.ReadLine();
 
-                if (obj.IsMatch(input_password_rule3))
+                if (obj.IsMatch(input_password_rule4))
                 {
-                    Console.WriteLine($"'{input_password_rule3}' is a valid password.\n");
+                    Console.WriteLine($"'{input_password_rule4}' is a valid password.\n");
                 }
                 else
                 {
