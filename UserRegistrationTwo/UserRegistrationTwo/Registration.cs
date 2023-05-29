@@ -112,5 +112,25 @@ namespace UserRegistrationTwo
                 }
             }
         }
+        public void CheckEmail(string input_mail)
+        {
+            string pattern_mail = @"[A-Za-z0-9._+-]{3}[@][A-Za-z0-9]{1,}[.][a-z]{3}[.]{0,1}[a-z]{0,}$";
+
+            Regex obj2 = new Regex(pattern_mail);
+
+            while (true)
+            {
+                if (obj2.IsMatch(input_mail))
+                {
+                    Console.WriteLine($"'{input_mail}' is a valid Email.\n");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                    break;
+                }
+            }
+        }
     }
 }
