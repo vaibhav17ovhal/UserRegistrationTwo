@@ -11,7 +11,8 @@ namespace UserRegistrationTwo
             Console.WriteLine("\n==============||===============\n");
 
             Registration reg = new Registration();
-            reg.Register();
+            //reg.Register();
+            reg.EmailRegistration();
         }
     }
 }
