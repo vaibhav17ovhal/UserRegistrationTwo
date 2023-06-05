@@ -9,10 +9,10 @@ namespace UserRegistrationTwo
 {
     public class Registration
     {
-        public bool Register(string input_name)
+        public void Register()
         {
             string pattern_name = @"^[A-Z][a-z]{2,}";
-            //string input_name = "";
+            string input_name = "";
 
             Regex obj = new Regex(pattern_name);
 
@@ -20,27 +20,41 @@ namespace UserRegistrationTwo
             {
                 Console.Write("Please enter first name: ");
                 input_name = Console.ReadLine();
-
-                if (obj.IsMatch(input_name))
+                try
                 {
-                    Console.WriteLine($"'{input_name}' is a valid User Name.\n");
+                    if (obj.IsMatch(input_name))
+                    {
+                        Console.WriteLine($"'{input_name}' is a valid User Name.\n");
+                    }
+                    else
+                    {
+                        throw new Exception("Invailid Input!! \nTry Again...\n");
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                    Console.WriteLine(ex.Message);
                 }
+                
 
                 Console.Write("Please enter last name: ");
                 input_name = Console.ReadLine();
-
-                if (obj.IsMatch(input_name))
+                try
                 {
-                    Console.WriteLine($"'{input_name}' is a valid last Name.\n");
+                    if (obj.IsMatch(input_name))
+                    {
+                        Console.WriteLine($"'{input_name}' is a valid last Name.\n");
+                    }
+                    else
+                    {
+                        throw new Exception("Invailid Input!! \nTry Again...\n");
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                    Console.WriteLine(ex.Message);
                 }
+                
             }
         }
         public void EmailRegistration()
@@ -54,15 +68,23 @@ namespace UserRegistrationTwo
             {
                 Console.Write("Enter your email: ");
                 input_email = Console.ReadLine();
+                try
+                {
+                    if (obj.IsMatch(input_email))
+                    {
+                        Console.WriteLine($"'{input_email}' is a valid Email.\n");
+                    }
+                    else
+                    {
+                        throw new Exception("Invailid Input!! \nTry Again...\n");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
-                if (obj.IsMatch(input_email))
-                {
-                    Console.WriteLine($"'{input_email}' is a valid Email.\n");
-                }
-                else
-                {
-                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
-                }
+               
             }
         }
         public void MobileRegistration()
@@ -76,15 +98,22 @@ namespace UserRegistrationTwo
             {
                 Console.Write("Enter your mobile number: ");
                 input_mobile = Console.ReadLine();
-
-                if (obj.IsMatch(input_mobile))
+                try
                 {
-                    Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
+                    if (obj.IsMatch(input_mobile))
+                    {
+                        Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
+                    }
+                    else
+                    {
+                        throw new Exception("Invailid Input!! \nTry Again...\n");
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                    Console.WriteLine(ex.Message);
                 }
+                
             }
         }
         public void PasswordRegistration()
@@ -101,15 +130,22 @@ namespace UserRegistrationTwo
             {
                 Console.Write("Enter the password: ");
                 input_password_rule4 = Console.ReadLine();
-
-                if (obj.IsMatch(input_password_rule4))
+                try
                 {
-                    Console.WriteLine($"'{input_password_rule4}' is a valid password.\n");
+                    if (obj.IsMatch(input_password_rule4))
+                    {
+                        Console.WriteLine($"'{input_password_rule4}' is a valid password.\n");
+                    }
+                    else
+                    {
+                        throw new Exception("Invailid Input!! \nTry Again...\n");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                catch (Exception ex) 
+                { 
+                    Console.WriteLine(ex.Message); 
                 }
+                
             }
         }
         public void CheckEmail(string input_mail)
@@ -120,16 +156,23 @@ namespace UserRegistrationTwo
 
             while (true)
             {
-                if (obj2.IsMatch(input_mail))
+                try
                 {
-                    Console.WriteLine($"'{input_mail}' is a valid Email.\n");
-                    break;
+                    if (obj2.IsMatch(input_mail))
+                    {
+                        Console.WriteLine($"'{input_mail}' is a valid Email.\n");
+                        break;
+                    }
+                    else
+                    {
+                        throw new Exception("Invailid Input!! \nTry Again...\n");
+                    }
                 }
-                else
+                catch( Exception ex)
                 {
-                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
-                    break;
+                    Console.WriteLine(ex.Message);
                 }
+                
             }
         }
         public int Adding(int num1 , int num2)
@@ -172,7 +215,7 @@ namespace UserRegistrationTwo
         public bool Password(string input_password)
         {
             string pattern_password = @"^[A-Z][0-9][A-Za-z0-9.-_]{5,}[@.-_]$";
-            
+
             Regex obj = new Regex(pattern_password);
             return true;
         }
