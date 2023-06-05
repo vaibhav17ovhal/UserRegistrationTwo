@@ -177,5 +177,13 @@ namespace UserRegistrationTwo
             return true;
         }
 
+        public bool Checking(string input_emailID)
+        {
+            string pattern_mailID = @"[A-Za-z0-9._+-]{3}[@][A-Za-z0-9]{1,}[.][a-z]{3}[.]{0,1}[a-z]{0,}$";
+            
+            Regex obj = new Regex(pattern_mailID);
+            return true;
+        }
+
     }
 }

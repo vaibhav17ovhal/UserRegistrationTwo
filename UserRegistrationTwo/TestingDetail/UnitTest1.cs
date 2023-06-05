@@ -62,5 +62,22 @@ namespace TestingDetail
 
             Assert.AreEqual(value, resultFive);
         }
+
+        [TestMethod]
+        [DataRow("abc@yahoo.com", true)]
+        [DataRow("abc-100@yahoo.com", true)]
+        [DataRow("abc.100@yahoo.com", true)]
+        [DataRow("abc111@abc.com", true)]
+        [DataRow("abc-100@abc.net", true)]
+        [DataRow("abc.100@abc.com.au", true)]
+        [DataRow("abc@1.com", true)]
+        [DataRow("abc@gmail.com.com", true)]
+        [DataRow("abc+100@gmail.com", true)]
+        public void Test7(string check , bool value)
+        {
+            var resultSix = obj.Checking(check);
+
+            Assert.AreEqual(value, resultSix);
+        }
     }
 }
